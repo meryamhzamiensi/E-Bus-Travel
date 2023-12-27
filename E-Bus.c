@@ -39,13 +39,11 @@ typedef struct SCompteVoy {
     struct Date d_compte;
 } SCompteVoy;
 
-// Global arrays to store data
 SCompteVoy comptes[50];
 SVoyageur voyageurs[50];
 SBus buss[20];
 SReservation reservations[20];
 
-// Function prototypes
 void menu();
 void sous_menu(int a);
 void gerer_voyageur(int a);
@@ -53,7 +51,6 @@ void gerer_compte(int a);
 void gerer_bus(int a);
 void gerer_reservation(int a);
 
-// Main function
 int main() {
     while (1) {
         menu();
@@ -145,7 +142,7 @@ void gerer_voyageur(int a)
         fwrite(&voyageur, sizeof(voyageur), 1, file);
 
         if(fwrite != 0)
-            printf("voyageur ajouté avec succes");
+            printf("voyageur ajoutÃ© avec succes");
         else
             printf("erreur");
         fclose(file);
@@ -156,7 +153,7 @@ void gerer_voyageur(int a)
         struct SVoyageur nvVoyageur;
         FILE *file;
 
-        printf("Code Voyageur à modifier : ");
+        printf("Code Voyageur Ã  modifier : ");
         scanf("%d", &nvVoyageur.code_voy);
         printf("nv nom : ");
         scanf("%s", &nvVoyageur.nom);
@@ -192,7 +189,7 @@ void gerer_voyageur(int a)
         int code;
         FILE *file;
 
-        printf("Code Voyageur à supprimer : ");
+        printf("Code Voyageur Ã  supprimer : ");
         scanf("%d", &code);
 
         file = fopen("voyageur.txt", "r");
@@ -277,7 +274,7 @@ void gerer_compte(int a)
         fwrite(&compte, sizeof(compte), 1, file);
 
         if(fwrite != 0)
-            printf("compte ajouté avec succes");
+            printf("compte ajoutÃ© avec succes");
         else
             printf("erreur");
     }
@@ -375,7 +372,7 @@ void gerer_bus(int a)
         fwrite(&bus, sizeof(bus), 1, file);
 
         if(fwrite != 0)
-            printf("bus ajouté avec succes");
+            printf("bus ajoutÃ© avec succes");
         else
             printf("erreur");
         fclose(file);
@@ -386,15 +383,15 @@ void gerer_bus(int a)
         struct SBus nvbus;
         FILE *file;
 
-        printf("Code bus à modifier: ");
+        printf("Code bus Ã  modifier: ");
         scanf("%d", &nvbus.code_bus);
         printf("nv etat : ");
         scanf("%s", &nvbus.etat);
         printf("matricule: ");
         scanf("%d", &nvbus.matricule);
-        printf("prix de location à modifier: ");
+        printf("prix de location Ã  modifier: ");
         scanf("%d", &nvbus.prixloc);
-        printf("Capacite à modifier: ");
+        printf("Capacite Ã  modifier: ");
         scanf("%d", &nvbus.nbreplaces);
 
         file = fopen("bus.txt", "r");
@@ -426,7 +423,7 @@ void gerer_bus(int a)
         int code;
         FILE *file;
 
-        printf("Code Bus à supprimer : ");
+        printf("Code Bus Ã  supprimer : ");
         scanf("%d", &code);
 
         file = fopen("bus.txt", "r");
@@ -516,7 +513,7 @@ void gerer_reservation(int a)
         fwrite(&reservation, sizeof(reservation), 1, file);
 
         if(fwrite != 0)
-            printf("reservation ajouté avec succes");
+            printf("reservation ajoutÃ© avec succes");
         else
             printf("erreur");
     }
@@ -567,7 +564,7 @@ void gerer_reservation(int a)
         int code;
         FILE *file;
 
-        printf("Code Reservation à supprimer : ");
+        printf("Code Reservation Ã  supprimer : ");
         scanf("%d", &code);
 
         file = fopen("reservation.txt", "r");
